@@ -1,7 +1,7 @@
 --moocsDB
 --Parent Table
 
-Platform (PlatfId(PK), Name not null, MobileApp)
+
 CREATE TABLE Platform (
 PlatfId int not null,
 Name varchar (225) not null,
