@@ -1,0 +1,17 @@
+User (UserID(PK), FirstName, LastName)
+
+Platform (PlatfId(PK), Name not null, MobileApp)
+
+Mooc (MoocId(PK), PlatfId(FK) not null,
+Name not null, Weeks, Category, Selfpaced not null, 
+Certificate, Status, Modules, EstEffor(h/w))
+UNIQUE (Name)
+Foreign Key (PlatfId) References Platform
+
+Enrollment (UserId(PK), MoocId(PK))
+Foreign Key (UserID) References User
+Foreign Key (MoocId) References Mooc
+
+Session (SessionId(PK), MoocId(FK) not null, EndDate, StartDate)
+EndDate > StartDate
+Foreign Key (MoocId) References Mooc
